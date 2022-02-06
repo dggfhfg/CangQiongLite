@@ -45,7 +45,7 @@
                         android:layout_marginLeft="@dimen/dp_2"
                         android:layout_marginTop="@dimen/dp_3"
                         android:fontFamily="@font/tencent"
-                        android:text="京豆小部件"
+                        android:text="苍穹"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="@color/black"
                         android:textSize="@dimen/dp_20" />
@@ -76,7 +76,7 @@
                         android:layout_marginRight="@dimen/dp_10"
                         android:background="@drawable/background_count_down_bac"
                         android:fontFamily="@font/tencent"
-                        android:text="V1.0"
+                        android:text="V1.1"
                         android:textColor="@color/white"
                         android:textSize="@dimen/dp_14" />
 
@@ -89,7 +89,7 @@
                     android:layout_marginTop="@dimen/dp_8"
                     android:layout_marginRight="@dimen/dp_15"
                     android:lineSpacingExtra="@dimen/dp_6"
-                    android:text="一款为京东量身定制的软件，无广告，无推送，无后台的“三无”绿色应用，请大家放心使用。"
+                    android:text="一款无广告，无推送，无后台的“三无”绿色应用，请大家放心使用。"
                     android:textColor="@color/black"
                     android:textSize="@dimen/dp_13" />
 

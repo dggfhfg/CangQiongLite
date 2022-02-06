@@ -1,6 +1,7 @@
-# JingBeanAppWidget
-![APP](https://cdn.jsdelivr.net/gh/baifan97/JingBeanAppWidget/APP.png)
-京豆小部件纯净版，无多余内容，完全开源，可基于源码进行二次打包，但请保留开源信息。
+# CangQiong-Lite
+![APP](https://cdn.jsdelivr.net/gh/baifan97/CangQiongLite/APP.png)
+![Widget](https://cdn.jsdelivr.net/gh/baifan97/CangQiongLite/Widget.png)
+### 苍穹纯净版，无多余内容，完全开源，请保留开源信息。
 
 
 ## 功能
@@ -19,11 +20,18 @@
 ## 下载地址
 蓝奏云：https://whitefan.lanzout.com/b0ag9xa0j
 密码:6666
+#### QQ交流群
+一群：651954570
+二群：939958404
+三群：722823536
 
-## 预览图
-![Widget](https://cdn.jsdelivr.net/gh/baifan97/JingBeanAppWidget/Widget.png)
 
 
+## 更新日志
+#### V1.1
+4*2小部件增加农场进度条
+#### V1.0
+首个纯净版开源
 
 # 说明
 

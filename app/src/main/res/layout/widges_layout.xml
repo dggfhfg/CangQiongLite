@@ -127,7 +127,61 @@
                             android:textColor="#000000"
                             android:textSize="@dimen/dp_10" />
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/jdform2"
+                                android:layout_width="@dimen/dp_76"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_hui"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/dp_4"
+                                android:paddingRight="@dimen/dp_4"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/dp_8" />
+
+                            <TextView
+                                android:id="@+id/jdform"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_jdform"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/dp_0"
+                                android:paddingRight="@dimen/dp_18"
+
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/dp_8" />
+
+                            <TextView
+                                android:id="@+id/jdform3"
+                                android:layout_width="@dimen/dp_76"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="#00000000"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/dp_4"
+                                android:paddingRight="@dimen/dp_0"
+                                android:text="东东农场"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/dp_8" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>

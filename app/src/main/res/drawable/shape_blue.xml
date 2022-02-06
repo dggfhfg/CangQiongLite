@@ -3,7 +3,7 @@
     <corners android:radius="@dimen/dp_10" />
     <gradient
         android:angle="0"
-        android:endColor="#79BEFF"
+        android:endColor="#E4389BFA"
         android:startColor="@color/widgesblue" />
-
+<!--    <solid android:color="@color/widgesblue" />-->
 </shape>

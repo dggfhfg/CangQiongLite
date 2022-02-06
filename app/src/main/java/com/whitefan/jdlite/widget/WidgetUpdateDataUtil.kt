@@ -84,6 +84,7 @@ class WidgetUpdateDataUtil {
         checkUpdate()
 
         getUserInfo()
+        getUserJdFruit()
 
         getUserInfo1()
 
@@ -196,6 +197,35 @@ class WidgetUpdateDataUtil {
 
             override fun onFail() {
 
+            }
+        })
+    }
+    private fun getUserJdFruit() {
+        HttpUtil.getUserJdFruit(thisKey, object : StringCallBack {
+            override fun onSuccess(result: String) {
+                try {
+                    val job = JSONObject(result)
+                    try {
+                        userBean.farmName = job.optJSONObject("farmUserPro").optString("name")
+                        userBean.treeEnergy = job.optJSONObject("farmUserPro").optString("treeEnergy")
+                        userBean.treeTotalEnergy = job.optJSONObject("farmUserPro").optString("treeTotalEnergy")
+                        userBean.treeImageUrl = job.optJSONObject("farmUserPro").optString("goodsImage")
+
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                    try {
+                        userBean.farmName = job.optJSONObject("farmUserPro").optString("name")
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                    setData()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            override fun onFail() {
             }
         })
     }
@@ -475,14 +505,6 @@ class WidgetUpdateDataUtil {
         }
 
 
-//        val nightSwitch = CacheUtil.getString("nightSwitch")
-//        if ("1" == nightSwitch) {
-//            remoteViews.setTextColor(R.id.background, ColorUtil.transColor("@color/white"))
-//
-//        } else {
-//            remoteViews.setTextColor(R.id.background, Color.parseColor("#FF000000"))
-//
-//        }
 
         val hideDivider = CacheUtil.getString("hideDivider")
         if ("1" == hideDivider) {
@@ -490,47 +512,7 @@ class WidgetUpdateDataUtil {
         } else {
             remoteViews.setViewVisibility(R.id.divider, View.VISIBLE)
         }
-/*
-        val hongbaoSwitch2 = CacheUtil.getString("hongbaoSwitch2")
-        if ("1" == hongbaoSwitch2) {
-            remoteViews.setViewVisibility(R.id.showallhongbao, View.VISIBLE)
-            remoteViews.setViewVisibility(R.id.showquanbuhongbao, View.GONE)
 
-            remoteViews.setTextViewText(R.id.guoquHb1, "今日过期:" + String.format("%.2f", userBean.jxRedGQ))
-            remoteViews.setTextViewText(R.id.hongbao1, userBean.hb)
-        } else {
-            remoteViews.setViewVisibility(R.id.showallhongbao, View.GONE)
-            remoteViews.setViewVisibility(R.id.showquanbuhongbao, View.VISIBLE)
-
-            remoteViews.setTextViewText(R.id.hongbao2, String.format("%.2f", userBean.jxRed))
-            remoteViews.setTextViewText(R.id.hongbao3, String.format("%.2f", userBean.jdRed))
-            remoteViews.setTextViewText(R.id.hongbao4, String.format("%.2f", userBean.jsRed))
-
-            remoteViews.setTextViewText(R.id.guoquHb2, "今日过期:" + String.format("%.2f", userBean.jxRedGQ))
-            remoteViews.setTextViewText(R.id.guoquHb3, "今日过期:" + String.format("%.2f", userBean.jdRedGQ))
-            remoteViews.setTextViewText(R.id.guoquHb4, "今日过期:" + String.format("%.2f", userBean.jsRedGQ))
-        }
-*/
-//        val hidejdhb = CacheUtil.getString("hidejdhb")
-//        if ("1" == hidejdhb) {
-//            remoteViews.setViewVisibility(R.id.jdhb, View.GONE)
-//        } else {
-//            remoteViews.setViewVisibility(R.id.jdhb, View.VISIBLE)
-//        }
-//
-//        val hidejxhb = CacheUtil.getString("hidejxhb")
-//        if ("1" == hidejxhb) {
-//            remoteViews.setViewVisibility(R.id.jxhb, View.GONE)
-//        } else {
-//            remoteViews.setViewVisibility(R.id.jxhb, View.VISIBLE)
-//        }
-//
-//        val hidejshb = CacheUtil.getString("hidejshb")
-//        if ("1" == hidejshb) {
-//            remoteViews.setViewVisibility(R.id.jshb, View.GONE)
-//        } else {
-//            remoteViews.setViewVisibility(R.id.jshb, View.VISIBLE)
-//        }
 
 
         val code = when (thisKey) {
@@ -556,6 +538,15 @@ class WidgetUpdateDataUtil {
                 -1
             }
         }
+
+        val maxWidth = R.dimen.dp_76.dmToPx()
+        var treeTotalEnergy = userBean.treeTotalEnergy.toInt()
+        var treeEnergy = userBean.treeEnergy.toInt()
+        var jdform3 =((treeEnergy * 100) / (treeTotalEnergy))
+        var jdform =(maxWidth * ((treeEnergy * 100) / (treeTotalEnergy)))/100
+
+        remoteViews.setTextViewText(R.id.jdform3, "东东农场：" + jdform3 + "%")
+        remoteViews.setViewPadding(R.id.jdform, 0, 0, jdform, 0)
 
         val cleatInt = Intent(MyApplication.mInstance, EmptyActivity::class.java)
         cleatInt.putExtra("data", thisKey)
